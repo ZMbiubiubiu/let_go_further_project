@@ -26,7 +26,7 @@ func Version() string {
 	}
 
 	if modified {
-		revision = fmt.Sprintf("%s:dirty", revision)
+		revision = fmt.Sprintf("%s-dirty", revision)
 	}
 
 	return revision
