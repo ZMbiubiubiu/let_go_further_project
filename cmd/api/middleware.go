@@ -4,8 +4,6 @@ import (
 	"errors"
 	"expvar"
 	"fmt"
-	"greenlight/internal/data"
-	"greenlight/internal/validator"
 	"net/http"
 	"strconv"
 	"strings"
@@ -13,8 +11,11 @@ import (
 	"time"
 
 	"github.com/felixge/httpsnoop"
-	"github.com/tomasen/realip" // New import
+	"github.com/tomasen/realip"
 	"golang.org/x/time/rate"
+
+	"greenlight/internal/data"
+	"greenlight/internal/validator"
 )
 
 func (app *application) recoverPanic(next http.Handler) http.Handler {

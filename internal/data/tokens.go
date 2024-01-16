@@ -11,8 +11,9 @@ import (
 	"crypto/sha256"
 	"database/sql"
 	"encoding/base32"
-	"greenlight/internal/validator"
 	"time"
+
+	"greenlight/internal/validator"
 )
 
 const (

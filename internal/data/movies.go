@@ -5,10 +5,11 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
-	"greenlight/internal/validator"
 	"time"
 
 	"github.com/lib/pq"
+
+	"greenlight/internal/validator"
 )
 
 type Movie struct {
@@ -39,7 +40,7 @@ func ValidateMovie(v *validator.Validator, movie *Movie) {
 	v.Check(validator.Unique(movie.Genres), "genres", "must not contain duplicate values")
 }
 
-// Define a MovieModel struct type which wraps a sql.DB connection pool
+// MovieModel struct type which wraps a sql.DB connection pool
 type MovieModel struct {
 	DB *sql.DB
 }
@@ -57,7 +58,6 @@ func (m MovieModel) Insert(movie *Movie) error {
 	return m.DB.QueryRowContext(ctx, query, args...).Scan(&movie.ID, &movie.CreatedAt, &movie.Version)
 }
 
-// Add a placeholder method for fetching a specific record from the movies table.
 func (m MovieModel) Get(id int64) (*Movie, error) {
 	if id < 1 {
 		return nil, ErrRecordNotFound
@@ -94,7 +94,6 @@ func (m MovieModel) Get(id int64) (*Movie, error) {
 	return &movie, err
 }
 
-// Add a placeholder method for updating a specific record in the movies table.
 func (m MovieModel) Update(movie *Movie) error {
 
 	query := `
@@ -120,7 +119,6 @@ func (m MovieModel) Update(movie *Movie) error {
 	return nil
 }
 
-// Add a placeholder method for deleting a specific record from the movies table.
 func (m MovieModel) Delete(id int64) error {
 	if id < 1 {
 		return ErrRecordNotFound

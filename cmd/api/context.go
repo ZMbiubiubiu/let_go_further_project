@@ -1,10 +1,10 @@
 package main
 
 import (
-	"greenlight/internal/data"
+	"context"
 	"net/http"
 
-	"context"
+	"greenlight/internal/data"
 )
 
 type contextKey string

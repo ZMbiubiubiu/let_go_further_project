@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"greenlight/internal/validator"
 	"io"
 	"net/http"
 	"net/url"
@@ -12,6 +11,8 @@ import (
 	"strings"
 
 	"github.com/julienschmidt/httprouter"
+
+	"greenlight/internal/validator"
 )
 
 // Define an envelope type

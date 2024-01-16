@@ -6,10 +6,6 @@ import (
 	"expvar"
 	"flag"
 	"fmt"
-	"greenlight/internal/data"
-	"greenlight/internal/jsonlog"
-	"greenlight/internal/mailer"
-	"greenlight/internal/vcs"
 	"os"
 	"runtime"
 	"strings"
@@ -17,6 +13,11 @@ import (
 	"time"
 
 	_ "github.com/lib/pq"
+
+	"greenlight/internal/data"
+	"greenlight/internal/jsonlog"
+	"greenlight/internal/mailer"
+	"greenlight/internal/vcs"
 )
 
 var version = vcs.Version()

@@ -10,7 +10,7 @@ var (
 	ErrEditConflict   = errors.New("edit conflict")
 )
 
-// create a Models struct which wraps the MovieModel. we'll add other models to this
+// Models struct which wraps the MovieModel. we'll add other models to this
 type Models struct {
 	Movies      MovieModel
 	Users       UserModel

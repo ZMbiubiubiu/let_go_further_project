@@ -5,10 +5,11 @@ import (
 	"crypto/sha256"
 	"database/sql"
 	"errors"
-	"greenlight/internal/validator"
 	"time"
 
 	"golang.org/x/crypto/bcrypt"
+
+	"greenlight/internal/validator"
 )
 
 var (

@@ -2,19 +2,19 @@ package validator
 
 import "regexp"
 
-// Declare a regular expression for sanity checking the format of email addresses(we'll use this later in the book).
-// If you're interested, this regular expression pattern is taken from  https://html.spec.whatwg.org/#valid-e-mail-address.
-// Note: if you're reading this if PDF or EPUB format and cannot seet he full pattern, please see the note further down the page.
 var (
+	// EmailRX Declare a regular expression for sanity checking the format of email addresses(we'll use this later in the book).
+	// If you're interested, this regular expression pattern is taken from  https://html.spec.whatwg.org/#valid-e-mail-address.
+	// Note: if you're reading this if PDF or EPUB format and cannot seet he full pattern, please see the note further down the page.
 	EmailRX = regexp.MustCompile("^[a-zA-Z0-9.!#$%&'*+\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$")
 )
 
-// Define a new Validator type which contains a map of validation errors.
+// Validator type which contains a map of validation errors.
 type Validator struct {
 	Errors map[string]string
 }
 
-// New is hepler which creates a new Validator instance with an empty errors map
+// New is helper which creates a new Validator instance with an empty errors map
 func New() *Validator {
 	return &Validator{Errors: make(map[string]string)}
 }
@@ -48,7 +48,7 @@ func PermittedValue[T comparable](value T, permittedValues ...T) bool {
 	return false
 }
 
-// Mathces return true if a string value matches a specific regexp pattern
+// Matches return true if a string value matches a specific regexp pattern
 func Matches(value string, rx *regexp.Regexp) bool {
 	return rx.MatchString(value)
 }

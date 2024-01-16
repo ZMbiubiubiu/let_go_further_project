@@ -3,9 +3,10 @@ package main
 import (
 	"errors"
 	"fmt"
+	"net/http"
+
 	"greenlight/internal/data"
 	"greenlight/internal/validator"
-	"net/http"
 )
 
 // Add a createMovieHandler for the "POST /v1/movies" endpoint. For now we simply
